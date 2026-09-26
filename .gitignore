@@ -10,3 +10,4 @@
 
 # Ignore Python cache inside the project
 Github Assistant/__pycache__/
+vector_db/
