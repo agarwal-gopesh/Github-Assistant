@@ -1,13 +1,8 @@
-# Ignore everything in the repository
 *
-
-# But keep .gitignore itself
 !.gitignore
-
-# Track the Github Assistant project
 !Github Assistant/
 !Github Assistant/**
 
-# Ignore Python cache inside the project
 Github Assistant/__pycache__/
-vector_db/
+Github Assistant/repos/
+Github Assistant/vector_db/s
