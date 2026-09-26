@@ -1,5 +1,6 @@
 import os
 import sys
+import shutil
 
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
@@ -8,7 +9,7 @@ from text_splitter import split_documents
 from document_loader import load_documents
 
 
-MODEL_ID = "sentence-transformers/all-MiniLM-L6-v2"
+MODEL_ID = "Qwen/Qwen3-Embedding-0.6B"
 VECTOR_DB_DIR = "vector_db"
 
 
@@ -38,6 +39,10 @@ def create_vector_store(chunks):
 
 
 def build_vector_store(url):
+    if os.path.exists(VECTOR_DB_DIR):
+        shutil.rmtree(VECTOR_DB_DIR)
+        print("Old vector database deleted.")
+
     documents = load_documents(url)
 
     print(f"Documents loaded: {len(documents)}")
