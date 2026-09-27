@@ -20,7 +20,8 @@ def create_embeddings():
             "device": "mps",
         },
         encode_kwargs={
-            "normalize_embeddings": True
+            "normalize_embeddings": True,
+            "batch_size": 32
         }
     )
 
